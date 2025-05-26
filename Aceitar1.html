@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eba! Aceito!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 102, 179, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+        h3 {
+            color: #ff3385;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .coracao {
+            font-size: 60px;
+            color: #ff66b3;
+            animation: heartbeat 1.5s infinite;
+            margin: 20px 0;
+        }
+        .botao {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff66b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="coracao">❤️</div>
+        <h3>Eba! Seremos muito felizes!</h3>
+        <a href="/namorinho.html" class="botao">Ser feliz de novo</a>
+    </div>
+</body>
+</html>
