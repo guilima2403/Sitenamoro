@@ -99,34 +99,43 @@
 </body>
 </html>
   <script>
-    let tapCount = 0;
-    let keyCount = 0;
-    let tapTimer, keyTimer;function resetTapCount() {
-  tapCount = 0;
-}
+  let tapCount = 0;
+  let keyCount = 0;
+  let tapTimer, keyTimer;
 
-function resetKeyCount() {
-  keyCount = 0;
-}
-
-document.addEventListener('touchstart', function () {
-  tapCount++;
-  clearTimeout(tapTimer);
-  tapTimer = setTimeout(resetTapCount, 1000);
-  if (tapCount === 3) {
-    window.location.href = "https://youtu.be/DFiU4pt6P5k?si=rNl3EQ8jdUQIEsGE";
+  function resetTapCount() {
+    tapCount = 0;
   }
-});
 
-document.addEventListener('keydown', function (e) {
-  if (e.code === 'Space') {
-    keyCount++;
-    clearTimeout(keyTimer);
-    keyTimer = setTimeout(resetKeyCount, 1000);
-    if (keyCount === 3) {
+  function resetKeyCount() {
+    keyCount = 0;
+  }
+
+  // Reset ao carregar a página
+  window.onload = () => {
+    tapCount = 0;
+    keyCount = 0;
+  };
+
+  document.addEventListener('touchstart', function () {
+    tapCount++;
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(resetTapCount, 1000);
+    if (tapCount === 3) {
+      tapCount = 0; // previne que não funcione depois
       window.location.href = "https://youtu.be/DFiU4pt6P5k?si=rNl3EQ8jdUQIEsGE";
     }
-  }
-});
+  });
 
+  document.addEventListener('keydown', function (e) {
+    if (e.code === 'Space') {
+      keyCount++;
+      clearTimeout(keyTimer);
+      keyTimer = setTimeout(resetKeyCount, 1000);
+      if (keyCount === 3) {
+        keyCount = 0; // previne que não funcione depois
+        window.location.href = "https://youtu.be/DFiU4pt6P5k?si=rNl3EQ8jdUQIEsGE";
+      }
+    }
+  });
   </script>
